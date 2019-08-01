@@ -57,12 +57,14 @@ Open your terminal and kindly follow the following steps.
 `npm init`
 4. Press Enter to complete the creation of package.json
 5. Add the below dependencies to your package.json
+
     "dependencies": {
     "express": "^4.17.1",
     "express-healthcheck": "^0.1.0",
     "mongoose": "^5.6.3"
     }
 6. Update your package.json with the following
+
     {
       "name": "expressjs-restful-apis-demo",
       "version": "1.0.0",
@@ -86,7 +88,7 @@ Open your terminal and kindly follow the following steps.
 
 7. Create a file named "server.js" — In this file, we will be writing the protocols to create our server
 8. Create a folder called "api" \
-`mkdir api`
+`mkdir api` \
 Inside this folder called api, create three separate folders called "models", "routes", and "controllers" by running \
 `mkdir api/controllers api/models api/routes`
 9. Create "tasksController.js" in the api/controllers folder, "tasksRoutes.js" in the api/routes folder, and "tasksModel.js" in the api/models folder
