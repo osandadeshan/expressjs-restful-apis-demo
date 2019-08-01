@@ -92,5 +92,5 @@ Inside this folder called api, create three separate folders called "models", "r
 `mkdir api/controllers api/models api/routes`
 9. Create "tasksController.js" in the api/controllers folder, "tasksRoutes.js" in the api/routes folder, and "tasksModel.js" in the api/models folder
 10. Our folder structure should look like this now
+![1](https://user-images.githubusercontent.com/9147189/62302191-75a7ae80-b469-11e9-977e-b1451e9b30dd.png)
 
-Package structure of Express.js
