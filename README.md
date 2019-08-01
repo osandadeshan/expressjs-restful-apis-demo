@@ -36,6 +36,6 @@ Let’s see some of the core features of Express framework
 
 ## Pre-requisites
 Node.js and MongoDB should be installed. If you haven’t installed them, you can install from the below URLs.
-[Node.js](https://nodejs.org/en/download/package-manager/)
-[MongoDB](https://docs.mongodb.com/manual/installation/)
+* [Node.js](https://nodejs.org/en/download/package-manager/)
+* [MongoDB](https://docs.mongodb.com/manual/installation/)
 
