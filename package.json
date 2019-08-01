@@ -4,7 +4,8 @@
   "description": "Sample project to demo API development using express node and mongodb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "Osanda Deshan",
   "license": "ISC",
