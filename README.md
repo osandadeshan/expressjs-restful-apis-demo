@@ -19,3 +19,5 @@ Let’s see some of the core features of Express framework
 * It defines a routing table which is used to perform different actions based on HTTP method and URL.
 * It allows to dynamically render HTML Pages based on passing arguments to templates.
 
+## Express.js Architecture
+![](https://s3-eu-west-1.amazonaws.com/jssolutions/Article_Photo/Mobile+app+development+with+Express.js/express+js+mobile+development.jpg)
