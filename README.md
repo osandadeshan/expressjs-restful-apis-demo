@@ -58,11 +58,12 @@ Open your terminal and kindly follow the following steps.
 4. Press Enter to complete the creation of package.json
 5. Add the below dependencies to your package.json
 
+
     "dependencies": {
-    "express": "^4.17.1",
-    "express-healthcheck": "^0.1.0",
-    "mongoose": "^5.6.3"
-    }
+        "express": "^4.17.1",
+        "express-healthcheck": "^0.1.0",
+        "mongoose": "^5.6.3"
+        }
 6. Update your package.json with the following
 
     {
