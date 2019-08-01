@@ -21,3 +21,21 @@ Let’s see some of the core features of Express framework
 
 ## Express.js Architecture
 ![](https://s3-eu-west-1.amazonaws.com/jssolutions/Article_Photo/Mobile+app+development+with+Express.js/express+js+mobile+development.jpg)
+
+## Advantages of Express.js?
+* Ultra-fast I/O
+* Asynchronous and single threaded
+* MVC like structure
+* Robust API makes routing easy
+
+## Tools/Technologies
+* Node.js
+* MongoDB
+* Text editor (Notepad++, Sublime, Atom, VSCode)
+* Postman
+
+## Pre-requisites
+Node.js and MongoDB should be installed. If you haven’t installed them, you can install from the below URLs.
+[Node.js](https://nodejs.org/en/download/package-manager/)
+[MongoDB](https://docs.mongodb.com/manual/installation/)
+
