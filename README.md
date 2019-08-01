@@ -49,7 +49,7 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 ## Getting started
 In this tutorial, I will guide you to develop RESTful APIs for CRUD operations using Mongoose and Express.js. Basically, you will be able to develop routes for GET, POST, PUT and DELETE HTTP methods.
 Open your terminal and kindly follow the following steps.
-1. Create a folder for your project. Here I will name it as "expressjs-restful-apis-demo"
+1. Create a folder for your project. Here I will name it as "expressjs-restful-apis-demo" \
 `mkdir expressjs-restful-apis-demo`
 2. Navigate to that folder
 `cd expressjs-restful-apis-demo`
