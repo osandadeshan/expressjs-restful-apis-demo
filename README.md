@@ -85,7 +85,7 @@ Open your terminal and kindly follow the following steps.
         "express-healthcheck": "^0.1.0",
         "mongoose": "^5.6.3"
       }
-    }
+}
 ``` 
 7. Create a file named "**server.js**" — In this file, we will be writing the protocols to create our server
 8. Create a folder called "**api**" \
@@ -155,3 +155,32 @@ module.exports = mongoose.model('Tasks', TaskSchema);
 ```
 From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service. \
 As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
+<br />
+
+## Setting up the routes
+Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (**GET**, **POST**, and so on). \
+Each of our routes has different route handler functions, which are executed when the route is matched. \
+Below we have defined two basic routes(`/tasks`, and `/tasks/taskId`) with different methods \
+`/tasks` has to methods(**GET** and **POST**), while `/tasks/taskId` has **GET**, **PUT** and **DELETE**. \
+As you can see, we required the controller so each of the routes methods can call it’s respective handler function. \
+To do this, open the **tasksRoutes.js** file in the route folder and paste the code snippet below into.
+```json
+'use strict';
+var tasksList = require('../controllers/tasksController');
+
+
+module.exports = function(app) {
+  // Tasks List Routes
+  app.route('/tasks')
+    .get(tasksList.getAllTasks)
+    .post(tasksList.createTask);
+
+  app.route('/tasks/:taskId')
+    .get(tasksList.getTaskById)
+    .put(tasksList.editTaskById)
+    .delete(tasksList.deleteTaskById);
+};
+```
+<br />
+
+## Setting up the controller
