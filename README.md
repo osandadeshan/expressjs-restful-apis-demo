@@ -50,11 +50,11 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 In this tutorial, I will guide you to develop RESTful APIs for CRUD operations using Mongoose and Express.js. Basically, you will be able to develop routes for **GET**, **POST**, **PUT** and **DELETE** HTTP methods.
 Open your terminal and kindly follow the following steps.
 1. Create a folder for your project. Here I will name it as "**expressjs-restful-apis-demo**" \
-`mkdir expressjs-restful-apis-demo`
+**`mkdir expressjs-restful-apis-demo`**
 2. Navigate to that folder \
-`cd expressjs-restful-apis-demo`
+**`cd expressjs-restful-apis-demo`**
 3. Create a "**package.json**" file — This package.json file provides the information of the project and its dependencies \
-`npm init`
+**`npm init`**
 4. Press Enter to complete the creation of **package.json**
 5. Add the below dependencies to your **package.json**
 ```json
@@ -89,9 +89,9 @@ Open your terminal and kindly follow the following steps.
 ``` 
 7. Create a file named "**server.js**" — In this file, we will be writing the protocols to create our server
 8. Create a folder called "**api**" \
-`mkdir api` \
+**`mkdir api`** \
 Inside this folder called **api**, create three separate folders called "**models**", "**routes**", and "**controllers**" by executing \
-`mkdir api/controllers api/models api/routes`
+**`mkdir api/controllers api/models api/routes`**
 9. Create "**tasksController.js**" in the `api/controllers` folder, "**tasksRoutes.js**" in the `api/routes` folder, and "**tasksModel.js**" in the `api/models` folder
 10. Our folder structure should look like this now
 ![1](https://user-images.githubusercontent.com/9147189/62302191-75a7ae80-b469-11e9-977e-b1451e9b30dd.png)
@@ -99,10 +99,10 @@ Inside this folder called **api**, create three separate folders called "**model
 
 ## Setting up the server
 1. Let’s install express and nodmon, express will be used to create the server while nodmon will help us to keep track of changes to our application by watching changed files and automatically restart the server \
-`npm install — save-dev nodemon` \
-`npm install express –save`
+**`npm install — save-dev nodemon`** \
+**`npm install express –save`**
 2. Then we can install **express-healthcheck**, which can be used to check the health of the server \
-`npm install express-healthcheck`
+**`npm install express-healthcheck`**
 3. Open the **server.js** file and type/copy the code below into it
 ```json
 var express = require('express'), // Call express
@@ -113,7 +113,7 @@ app.listen(port);
 console.log('RESTful API demo server started on: ' + port);
 ```
 4. On your terminal, execute \
-`npm start` \
+**`npm start`** \
 This will start the server and then you will see \
 **RESTful API demo server started on: 3000**
 <br />
