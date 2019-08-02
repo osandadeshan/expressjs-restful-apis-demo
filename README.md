@@ -99,7 +99,7 @@ Inside this folder called **api**, create three separate folders called "**model
 
 ## Setting up the server
 1. Let’s install express and nodmon, express will be used to create the server while nodmon will help us to keep track of changes to our application by watching changed files and automatically restart the server \
-`npm install — save-dev nodemon`
+`npm install — save-dev nodemon` \
 `npm install express –save`
 2. Then we can install **express-healthcheck**, which can be used to check the health of the server \
 `npm install express-healthcheck`
@@ -113,7 +113,7 @@ app.listen(port);
 console.log('RESTful API demo server started on: ' + port);
 ```
 4. On your terminal, execute \
-`npm start`
+`npm start` \
 This will start the server and then you will see \
 **RESTful API demo server started on: 3000**
 <br />
@@ -153,5 +153,5 @@ var TaskSchema = new Schema({
 
 module.exports = mongoose.model('Tasks', TaskSchema);
 ```
-From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service.
+From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service. \
 As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
