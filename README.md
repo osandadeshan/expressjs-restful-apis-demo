@@ -10,7 +10,7 @@ The REST architectural style describes six constraints that were originally comm
 4. Client-Server
 5. Layered System
 6. Code on Demand (optional)
-RESTful services use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations.
+RESTful services use HTTP requests to perform **CRUD (Create, Read, Update, Delete) operations**.
 <br />
 
 ## What is Express.js?
@@ -47,16 +47,16 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 <br />
 
 ## Getting started
-In this tutorial, I will guide you to develop RESTful APIs for CRUD operations using Mongoose and Express.js. Basically, you will be able to develop routes for GET, POST, PUT and DELETE HTTP methods.
+In this tutorial, I will guide you to develop RESTful APIs for CRUD operations using Mongoose and Express.js. Basically, you will be able to develop routes for **GET**, **POST**, **PUT** and **DELETE** HTTP methods.
 Open your terminal and kindly follow the following steps.
 1. Create a folder for your project. Here I will name it as "**expressjs-restful-apis-demo**" \
 `mkdir expressjs-restful-apis-demo`
 2. Navigate to that folder \
 `cd expressjs-restful-apis-demo`
-3. Create a "package.json" file — This package.json file provides the information of the project and its dependencies \
+3. Create a "**package.json**" file — This package.json file provides the information of the project and its dependencies \
 `npm init`
-4. Press Enter to complete the creation of package.json
-5. Add the below dependencies to your package.json
+4. Press Enter to complete the creation of **package.json**
+5. Add the below dependencies to your **package.json**
 ```json
 "dependencies": {
         "express": "^4.17.1",
@@ -64,9 +64,9 @@ Open your terminal and kindly follow the following steps.
         "mongoose": "^5.6.3"
 }
 ```
-6. Update your package.json with the following
-
-    {
+6. Update your **package.json** with the following
+```json
+{
       "name": "expressjs-restful-apis-demo",
       "version": "1.0.0",
       "description": "Sample project to demo API development using express node and mongodb",
@@ -86,13 +86,13 @@ Open your terminal and kindly follow the following steps.
         "mongoose": "^5.6.3"
       }
     }
-
-7. Create a file named "server.js" — In this file, we will be writing the protocols to create our server
-8. Create a folder called "api" \
+``` 
+7. Create a file named "**server.js**" — In this file, we will be writing the protocols to create our server
+8. Create a folder called "**api**" \
 `mkdir api` \
-Inside this folder called api, create three separate folders called "models", "routes", and "controllers" by running \
+Inside this folder called **api**, create three separate folders called "**models**", "**routes**", and "**controllers**" by executing \
 `mkdir api/controllers api/models api/routes`
-9. Create "tasksController.js" in the api/controllers folder, "tasksRoutes.js" in the api/routes folder, and "tasksModel.js" in the api/models folder
+9. Create "**tasksController.js**" in the a`pi/controllers` folder, "**tasksRoutes.js**" in the `api/routes` folder, and "**tasksModel.js**" in the `api/models` folder
 10. Our folder structure should look like this now
 ![1](https://user-images.githubusercontent.com/9147189/62302191-75a7ae80-b469-11e9-977e-b1451e9b30dd.png)
 
