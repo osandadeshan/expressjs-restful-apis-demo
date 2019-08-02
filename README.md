@@ -184,9 +184,10 @@ module.exports = function(app) {
 <br />
 
 ## Setting up the controller
-Open **tasksController.js** file with your text editor (VSCode, Sublime, Atom e.t.c) and let’s deep dive into coding.\
+Open **tasksController.js** file with your text editor (VSCode, Sublime, Atom e.t.c) and let’s deep dive into coding.
 
-In this controller, we would be writing 5 different functions namely: **getAllTasks**, **createTask**, **getTaskById**, **editTaskById**, **deleteTaskById**. We will export each of the functions for us to use in our routes.\
+In this controller, we would be writing 5 different functions namely: **getAllTasks**, **createTask**, **getTaskById**, **editTaskById**, **deleteTaskById**. We will export each of the functions for us to use in our routes.
+
 Each of these functions uses different mongoose methods such as **find**, **findById**, **findOneAndUpdate**, **save** and **remove**.
 ```json
 'use strict';
