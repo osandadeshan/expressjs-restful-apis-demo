@@ -3,6 +3,7 @@
 
 ## What is REST?
 **REST**, or Representational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server. We will go into what these terms mean and why they are beneficial characteristics for services on the Web.
+
 The REST architectural style describes six constraints that were originally communicated by Roy Fielding in his doctoral dissertation and defines the basis of RESTful-style as:
 1. Uniform Interface
 2. Stateless
@@ -10,12 +11,15 @@ The REST architectural style describes six constraints that were originally comm
 4. Client-Server
 5. Layered System
 6. Code on Demand (optional)
+
 RESTful services use HTTP requests to perform **CRUD (Create, Read, Update, Delete) operations**.
 <br />
 
 ## What is Express.js?
 Express is a fast, assertive, essential and moderate web framework of Node.js. You can assume express as a layer built on the top of the Node.js that helps manage a server and routes. It provides a robust set of features to develop web and mobile applications.
+
 Let’s see some of the core features of Express framework
+
 * It can be used to design single-page, multi-page and hybrid web applications.
 * It allows to setup middleware to respond to HTTP Requests.
 * It defines a routing table which is used to perform different actions based on HTTP method and URL.
@@ -48,14 +52,19 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 
 ## Getting started
 In this tutorial, I will guide you to develop RESTful APIs for CRUD operations using Mongoose and Express.js. Basically, you will be able to develop routes for **GET**, **POST**, **PUT** and **DELETE** HTTP methods.
+
 Open your terminal and kindly follow the following steps.
 1. Create a folder for your project. Here I will name it as "**expressjs-restful-apis-demo**" \
 **`mkdir expressjs-restful-apis-demo`**
+
 2. Navigate to that folder \
 **`cd expressjs-restful-apis-demo`**
+
 3. Create a "**package.json**" file — This package.json file provides the information of the project and its dependencies \
 **`npm init`**
+
 4. Press Enter to complete the creation of **package.json**
+
 5. Add the below dependencies to your **package.json**
 ```json
 "dependencies": {
@@ -88,11 +97,14 @@ Open your terminal and kindly follow the following steps.
 }
 ``` 
 7. Create a file named "**server.js**" — In this file, we will be writing the protocols to create our server
+
 8. Create a folder called "**api**" \
 **`mkdir api`** \
 Inside this folder called **api**, create three separate folders called "**models**", "**routes**", and "**controllers**" by executing \
 **`mkdir api/controllers api/models api/routes`**
+
 9. Create "**tasksController.js**" in the `api/controllers` folder, "**tasksRoutes.js**" in the `api/routes` folder, and "**tasksModel.js**" in the `api/models` folder
+
 10. Our folder structure should look like this now
 ![1](https://user-images.githubusercontent.com/9147189/62302191-75a7ae80-b469-11e9-977e-b1451e9b30dd.png)
 <br />
@@ -101,8 +113,10 @@ Inside this folder called **api**, create three separate folders called "**model
 1. Let’s install express and nodmon, express will be used to create the server while nodmon will help us to keep track of changes to our application by watching changed files and automatically restart the server \
 **`npm install — save-dev nodemon`** \
 **`npm install express –save`**
+
 2. Then we can install **express-healthcheck**, which can be used to check the health of the server \
 **`npm install express-healthcheck`**
+
 3. Open the **server.js** file and type/copy the code below into it
 ```javascript
 var express = require('express'), // Call express
@@ -121,6 +135,7 @@ This will start the server and then you will see \
 ## Setting up the schema
 First, we need to install mongoose. Mongoose is what we will use to interact with a MongoDB(Database) instance. \
 **`npm install mongoose –save`** \
+
 After installation, open the **tasksModel.js** file in your `api/models` folder and type the following code into the file and save.
 ```javascript
 'use strict';
@@ -154,15 +169,21 @@ var TaskSchema = new Schema({
 module.exports = mongoose.model('Tasks', TaskSchema);
 ```
 From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service. \
+
 As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
 <br />
 
 ## Setting up the routes
 Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (**GET**, **POST**, and so on). \
+
 Each of our routes has different route handler functions, which are executed when the route is matched. \
+
 Below we have defined two basic routes(`/tasks`, and `/tasks/taskId`) with different methods \
+
 `/tasks` has to methods(**GET** and **POST**), while `/tasks/taskId` has **GET**, **PUT** and **DELETE**. \
+
 As you can see, we required the controller so each of the routes methods can call it’s respective handler function. \
+
 To do this, open the **tasksRoutes.js** file in the route folder and paste the code snippet below into.
 ```javascript
 'use strict';
@@ -260,13 +281,19 @@ Task.remove({
 
 ## Completing the server
 Earlie, we had a minimal code for our server to be up and running in the **server.js** file. \
+
 In this section we will be connecting our handlers(controllers), database, the created models, body parser and the created routes together. \
+
 Open the **server.js** file created a while ago and follow the following steps to put everything together. \
+
 Essentially, you will be replacing the code in your **server.js** with the code snippet from this section
 1. Connect your database by adding a url to the mongoose instance connection
+
 2. Load the created model — task
+
 3. Install bodyParser and use bodyParser Parse incoming request bodies in a middleware before your handlers, available under the **req.body** property.
 It exposes various factories to create middlewares. All middlewares will populate the **req.bodyproperty** with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned)
+
 4. Register the created routes in the server
 ```javascript
 var express = require('express'), // Call express
@@ -311,6 +338,7 @@ app.use('/api', router);
 5. Start MongoDB server \
 Open your terminal and run \
 `mongod`
+
 6. Start Node server \
 Open your terminal and run \
 `npm start`
@@ -337,8 +365,11 @@ Now that everything is now connected, let’s test each of the routes and the re
 
 Open your postman and type:
 1. **http://localhost:3000/tasks** in the enter request URL section
+
 2. Change the HTTP method to **POST** and select raw radio button
+
 3. Then choose **JSON (application/json)**
+
 4. Enter the body as follows
 ```json
 {
@@ -349,15 +380,21 @@ Open your postman and type:
 }
 ```
 5. Click on Send button
+
 6. It will give the response as **201 (Created)**
+
 **POST Request**
 ![POST](https://user-images.githubusercontent.com/9147189/62351820-28bde980-b4f6-11e9-8b9d-c7e94872424a.PNG)
+
 **GET Request**
 ![GET](https://user-images.githubusercontent.com/9147189/62351855-3c695000-b4f6-11e9-8b3b-5907739fcd65.PNG)
+
 **PUT Request**
 ![PUT](https://user-images.githubusercontent.com/9147189/62351886-4c812f80-b4f6-11e9-975a-bc798de7faef.PNG)
+
 **DELETE Request**
 ![DELETE](https://user-images.githubusercontent.com/9147189/62351909-602c9600-b4f6-11e9-81d6-700f125f163b.PNG)
+
 **Note**: Health route can be verified using **GET http://localhost:3000/health**
 **Health Request**
 ![Health](https://user-images.githubusercontent.com/9147189/62351963-87836300-b4f6-11e9-953b-b035ee560991.PNG)
