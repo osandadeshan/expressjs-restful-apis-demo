@@ -120,7 +120,7 @@ This will start the server and then you will see \
 
 ## Setting up the schema
 First, we need to install mongoose. Mongoose is what we will use to interact with a MongoDB(Database) instance. \
-`npm install mongoose –save`
+**`npm install mongoose –save`** \
 After installation, open the **tasksModel.js** file in your `api/models` folder and type the following code into the file and save.
 ```json
 'use strict';
