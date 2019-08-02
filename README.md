@@ -184,3 +184,131 @@ module.exports = function(app) {
 <br />
 
 ## Setting up the controller
+Open **tasksController.js** file with your text editor (VSCode, Sublime, Atom e.t.c) and let’s deep dive into coding.
+In this controller, we would be writing 5 different functions namely: **getAllTasks**, **createTask**, **getTaskById**, **editTaskById**, **deleteTaskById**. We will export each of the functions for us to use in our routes.
+Each of these functions uses different mongoose methods such as **find**, **findById**, **findOneAndUpdate**, **save** and **remove**.
+```json
+'use strict';
+var mongoose = require('mongoose'),
+Task = mongoose.model('Tasks');
+
+
+// Retrieve all the tasks saved in the database
+exports.getAllTasks = function(req, res) {
+  Task.find({}, function(err, task) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.json(task);
+    }
+  });
+};
+
+// Create a new task
+exports.createTask = function(req, res) {
+  var new_task = new Task(req.body);
+  new_task.save(function(err, task) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(201).json(task);
+    }
+  });
+};
+
+// Retrieve a task by taskId
+exports.getTaskById = function(req, res) {
+  Task.findById(req.params.taskId, function(err, task) {
+    if (err) {
+      res.status(404).send({ error: { errors: [ { domain: 'global', reason: 'notFound', message: 'Not Found', 
+                            description: 'Couldn\'t find the requested taskId \'' + req.params.taskId + '\'' } ], err, code: 404 } })
+    } else {
+      res.json(task);
+    }
+  });
+};
+
+// Edit a task by taskId
+exports.editTaskById = function(req, res) {
+  Task.findOneAndUpdate({_id: req.params.taskId}, req.body, {new: true}, function(err, task) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.json(task);
+    }
+  });
+};
+
+// Delete a task by taskId
+exports.deleteTaskById = function(req, res) {
+Task.remove({
+    _id: req.params.taskId
+  }, function(err, task) {
+    if (err) {
+      res.status(404).send({ error: { errors: [ { domain: 'global', reason: 'notFound', message: 'Not Found', 
+                            description: 'Couldn\'t find the requested taskId \'' + req.params.taskId + '\'' } ], code: 404, message: 'Not Found' } })
+    } else {
+      res.status(204).send();
+      //res.json({ message: 'Task successfully deleted' });
+    }
+  });
+};
+```
+<br />
+
+## Completing the server
+Earlie, we had a minimal code for our server to be up and running in the **server.js** file. \
+In this section we will be connecting our handlers(controllers), database, the created models, body parser and the created routes together. \
+Open the **server.js** file created a while ago and follow the following steps to put everything together. \
+Essentially, you will be replacing the code in your **server.js** with the code snippet from this section
+1. Connect your database by adding a url to the mongoose instance connection
+2. Load the created model — task
+3. Install bodyParser and use bodyParser Parse incoming request bodies in a middleware before your handlers, available under the **req.body** property.
+It exposes various factories to create middlewares. All middlewares will populate the **req.bodyproperty** with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned)
+4. Register the created routes in the server
+```json
+var express = require('express'), // Call express
+    app = express(), // Define our app using express
+    port = process.env.PORT || 3000, // Set the port
+    mongoose = require('mongoose'), // Call mongoose to interact with a MongoDB(Database) instance
+    Task = require('./api/models/tasksModel'), // Created model loading here
+    bodyParser = require('body-parser'); //Middleware to process incoming request body objects
+  
+// Mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/tasksdb'); 
+
+/* Configure app to use bodyParser()
+   this will let us get the data from a POST */
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//Importing route
+var routes = require('./api/routes/tasksRoutes'); 
+
+//Register the route
+routes(app); 
+
+// Start the server
+app.listen(port);
+console.log('RESTful API demo server started on: ' + port);
+
+// Get an instance of the express Router
+var router = express.Router();
+
+// Health route to make sure everything is working (accessed at GET http://localhost:3000/health)
+app.use('/health', require('express-healthcheck')({
+  healthy: function () {
+      return { message: 'ExpressJS web service is up and running' };
+  }
+}));
+
+// All of our routes will be prefixed with /api
+app.use('/api', router);
+```
+5. Start MongoDB server \
+Open your terminal and run \
+`mongod`
+6. Start Node server \
+Open your terminal and run \
+`npm start`
