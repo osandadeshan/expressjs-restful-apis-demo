@@ -384,21 +384,21 @@ Open your postman and type:
 6. It will give the response as **201 (Created)**
 
 **POST Request**
-![POST](https://user-images.githubusercontent.com/9147189/62351820-28bde980-b4f6-11e9-8b9d-c7e94872424a.PNG)
+![POST](https://user-images.githubusercontent.com/9147189/62363038-d5f02c00-b50d-11e9-9edd-2cd987ef5525.PNG)
 
 
 **GET Request**
-![GET](https://user-images.githubusercontent.com/9147189/62351855-3c695000-b4f6-11e9-8b3b-5907739fcd65.PNG)
+![GET](https://user-images.githubusercontent.com/9147189/62362954-a6d9ba80-b50d-11e9-9309-8693a75f6df9.PNG)
 
 
 **PUT Request**
-![PUT](https://user-images.githubusercontent.com/9147189/62351886-4c812f80-b4f6-11e9-975a-bc798de7faef.PNG)
+![PUT](https://user-images.githubusercontent.com/9147189/62362725-22873780-b50d-11e9-8508-90b1db225dad.PNG)
 
 
 **DELETE Request**
-![DELETE](https://user-images.githubusercontent.com/9147189/62351909-602c9600-b4f6-11e9-81d6-700f125f163b.PNG)
+![DELETE](https://user-images.githubusercontent.com/9147189/62362816-5bbfa780-b50d-11e9-9dc7-a2b9b1ab7bc5.PNG)
 
 
 **Note**: Health route can be verified using **GET http://localhost:3000/health**
 **Health Request**
-![Health](https://user-images.githubusercontent.com/9147189/62351963-87836300-b4f6-11e9-953b-b035ee560991.PNG)
+![Health](https://user-images.githubusercontent.com/9147189/62362889-8447a180-b50d-11e9-986a-812e3f332063.PNG)
