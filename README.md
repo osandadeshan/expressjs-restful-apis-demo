@@ -330,3 +330,34 @@ app.use(function(req, res) {
 });
 ```
 The snippet above helps to redirect and respond whenever a wrong route is entered on the site.
+<br />
+
+## Testing via Postman
+Now that everything is now connected, let’s test each of the routes and the respective methods.
+
+Open your postman and type:
+1. **http://localhost:3000/tasks** in the enter request URL section
+2. Change the HTTP method to **POST** and select raw radio button
+3. Then choose **JSON (application/json)**
+4. Enter the body as follows
+```json
+{
+	"name": "Task 1",
+	"category": "R&D",
+	"status": "Completed",
+	"createdDate": "2019-07-11T04:06:44.110Z"
+}
+```
+5. Click on Send button
+6. It will give the response as **201 (Created)**
+**POST Request**
+![POST](https://user-images.githubusercontent.com/9147189/62351820-28bde980-b4f6-11e9-8b9d-c7e94872424a.PNG)
+**GET Request**
+![GET](https://user-images.githubusercontent.com/9147189/62351855-3c695000-b4f6-11e9-8b3b-5907739fcd65.PNG)
+**PUT Request**
+![PUT](https://user-images.githubusercontent.com/9147189/62351886-4c812f80-b4f6-11e9-975a-bc798de7faef.PNG)
+**DELETE Request**
+![DELETE](https://user-images.githubusercontent.com/9147189/62351909-602c9600-b4f6-11e9-81d6-700f125f163b.PNG)
+**Note**: Health route can be verified using **GET http://localhost:3000/health**
+**Health Request**
+![Health](https://user-images.githubusercontent.com/9147189/62351963-87836300-b4f6-11e9-953b-b035ee560991.PNG)
