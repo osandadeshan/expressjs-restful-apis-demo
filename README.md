@@ -134,7 +134,7 @@ This will start the server and then you will see \
 
 ## Setting up the schema
 First, we need to install mongoose. Mongoose is what we will use to interact with a MongoDB(Database) instance. \
-**`npm install mongoose –save`** \
+**`npm install mongoose –save`**
 
 After installation, open the **tasksModel.js** file in your `api/models` folder and type the following code into the file and save.
 ```javascript
@@ -168,21 +168,21 @@ var TaskSchema = new Schema({
 
 module.exports = mongoose.model('Tasks', TaskSchema);
 ```
-From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service. \
+From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service.
 
 As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
 <br />
 
 ## Setting up the routes
-Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (**GET**, **POST**, and so on). \
+Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (**GET**, **POST**, and so on).
 
-Each of our routes has different route handler functions, which are executed when the route is matched. \
+Each of our routes has different route handler functions, which are executed when the route is matched.
 
-Below we have defined two basic routes(`/tasks`, and `/tasks/taskId`) with different methods \
+Below we have defined two basic routes(`/tasks`, and `/tasks/taskId`) with different methods
 
-`/tasks` has to methods(**GET** and **POST**), while `/tasks/taskId` has **GET**, **PUT** and **DELETE**. \
+`/tasks` has to methods(**GET** and **POST**), while `/tasks/taskId` has **GET**, **PUT** and **DELETE**.
 
-As you can see, we required the controller so each of the routes methods can call it’s respective handler function. \
+As you can see, we required the controller so each of the routes methods can call it’s respective handler function.
 
 To do this, open the **tasksRoutes.js** file in the route folder and paste the code snippet below into.
 ```javascript
@@ -280,11 +280,11 @@ Task.remove({
 <br />
 
 ## Completing the server
-Earlie, we had a minimal code for our server to be up and running in the **server.js** file. \
+Earlie, we had a minimal code for our server to be up and running in the **server.js** file.
 
-In this section we will be connecting our handlers(controllers), database, the created models, body parser and the created routes together. \
+In this section we will be connecting our handlers(controllers), database, the created models, body parser and the created routes together.
 
-Open the **server.js** file created a while ago and follow the following steps to put everything together. \
+Open the **server.js** file created a while ago and follow the following steps to put everything together.
 
 Essentially, you will be replacing the code in your **server.js** with the code snippet from this section
 1. Connect your database by adding a url to the mongoose instance connection
