@@ -104,7 +104,7 @@ Inside this folder called **api**, create three separate folders called "**model
 2. Then we can install **express-healthcheck**, which can be used to check the health of the server \
 **`npm install express-healthcheck`**
 3. Open the **server.js** file and type/copy the code below into it
-```json
+```javascript
 var express = require('express'), // Call express
 app = express(), // Define our app using express
 port = process.env.PORT || 3000, // Set the port
@@ -122,7 +122,7 @@ This will start the server and then you will see \
 First, we need to install mongoose. Mongoose is what we will use to interact with a MongoDB(Database) instance. \
 **`npm install mongoose –save`** \
 After installation, open the **tasksModel.js** file in your `api/models` folder and type the following code into the file and save.
-```json
+```javascript
 'use strict';
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -164,7 +164,7 @@ Below we have defined two basic routes(`/tasks`, and `/tasks/taskId`) with diffe
 `/tasks` has to methods(**GET** and **POST**), while `/tasks/taskId` has **GET**, **PUT** and **DELETE**. \
 As you can see, we required the controller so each of the routes methods can call it’s respective handler function. \
 To do this, open the **tasksRoutes.js** file in the route folder and paste the code snippet below into.
-```json
+```javascript
 'use strict';
 var tasksList = require('../controllers/tasksController');
 
@@ -189,7 +189,7 @@ Open **tasksController.js** file with your text editor (VSCode, Sublime, Atom e.
 In this controller, we would be writing 5 different functions namely: **getAllTasks**, **createTask**, **getTaskById**, **editTaskById**, **deleteTaskById**. We will export each of the functions for us to use in our routes.
 
 Each of these functions uses different mongoose methods such as **find**, **findById**, **findOneAndUpdate**, **save** and **remove**.
-```json
+```javascript
 'use strict';
 var mongoose = require('mongoose'),
 Task = mongoose.model('Tasks');
@@ -268,7 +268,7 @@ Essentially, you will be replacing the code in your **server.js** with the code 
 3. Install bodyParser and use bodyParser Parse incoming request bodies in a middleware before your handlers, available under the **req.body** property.
 It exposes various factories to create middlewares. All middlewares will populate the **req.bodyproperty** with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned)
 4. Register the created routes in the server
-```json
+```javascript
 var express = require('express'), // Call express
     app = express(), // Define our app using express
     port = process.env.PORT || 3000, // Set the port
@@ -322,7 +322,7 @@ Having done all these, what happens if we entered a wrong route? say you entered
 Middlewares basically intercepts incoming HTTP request and as such you can use them to perform several operations ranging from authentication to validations etc.
 
 To do this, open your **server.js** file and paste the code snippet into it.
-```json
+```javascript
 // Returning response with 404 when incorrect url is requested 
 app.use(function(req, res) {
   res.status(404).send({ error: { errors: [ { domain: 'global', reason: 'notFound', message: 'Not Found', 
