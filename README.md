@@ -92,7 +92,66 @@ Open your terminal and kindly follow the following steps.
 `mkdir api` \
 Inside this folder called **api**, create three separate folders called "**models**", "**routes**", and "**controllers**" by executing \
 `mkdir api/controllers api/models api/routes`
-9. Create "**tasksController.js**" in the a`pi/controllers` folder, "**tasksRoutes.js**" in the `api/routes` folder, and "**tasksModel.js**" in the `api/models` folder
+9. Create "**tasksController.js**" in the `api/controllers` folder, "**tasksRoutes.js**" in the `api/routes` folder, and "**tasksModel.js**" in the `api/models` folder
 10. Our folder structure should look like this now
 ![1](https://user-images.githubusercontent.com/9147189/62302191-75a7ae80-b469-11e9-977e-b1451e9b30dd.png)
+<br />
 
+## Setting up the server
+1. Let’s install express and nodmon, express will be used to create the server while nodmon will help us to keep track of changes to our application by watching changed files and automatically restart the server \
+`npm install — save-dev nodemon`
+`npm install express –save`
+2. Then we can install **express-healthcheck**, which can be used to check the health of the server \
+`npm install express-healthcheck`
+3. Open the **server.js** file and type/copy the code below into it
+```json
+var express = require('express'), // Call express
+app = express(), // Define our app using express
+port = process.env.PORT || 3000, // Set the port
+// Start the server
+app.listen(port);
+console.log('RESTful API demo server started on: ' + port);
+```
+4. On your terminal, execute \
+`npm start`
+This will start the server and then you will see \
+**RESTful API demo server started on: 3000**
+<br />
+
+## Setting up the schema
+First, we need to install mongoose. Mongoose is what we will use to interact with a MongoDB(Database) instance. \
+`npm install mongoose –save`
+After installation, open the **tasksModel.js** file in your `api/models` folder and type the following code into the file and save.
+```json
+'use strict';
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+
+// JSON schema for 
+var TaskSchema = new Schema({
+  name: {
+    type: String,
+    required: 'Kindly enter the name of the task'
+  },
+  category: {
+    type: String,
+    required: 'Kindly enter the category of the task'
+  },
+  createdDate: {
+    type: Date,
+    default: Date.now
+  },
+  status: {
+    type: [{
+      type: String,
+      enum: ['Pending', 'Ongoing', 'Completed']
+    }],
+    default: ['Pending']
+  }
+});
+
+module.exports = mongoose.model('Tasks', TaskSchema);
+```
+From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service.
+As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
