@@ -53,7 +53,7 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 ## Getting started
 Basically this project contains RESTful APIs for CRUD operations which developed using Mongoose and Express.js. 
 
-Open your terminal and kindly follow the following steps.
+Open your terminal and follow the following steps.
 1. Install the relevant node modules \
 **`npm install`**
 
