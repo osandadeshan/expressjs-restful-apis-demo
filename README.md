@@ -386,14 +386,18 @@ Open your postman and type:
 **POST Request**
 ![POST](https://user-images.githubusercontent.com/9147189/62351820-28bde980-b4f6-11e9-8b9d-c7e94872424a.PNG)
 
+
 **GET Request**
 ![GET](https://user-images.githubusercontent.com/9147189/62351855-3c695000-b4f6-11e9-8b3b-5907739fcd65.PNG)
+
 
 **PUT Request**
 ![PUT](https://user-images.githubusercontent.com/9147189/62351886-4c812f80-b4f6-11e9-975a-bc798de7faef.PNG)
 
+
 **DELETE Request**
 ![DELETE](https://user-images.githubusercontent.com/9147189/62351909-602c9600-b4f6-11e9-81d6-700f125f163b.PNG)
+
 
 **Note**: Health route can be verified using **GET http://localhost:3000/health**
 **Health Request**
