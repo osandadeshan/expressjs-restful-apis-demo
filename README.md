@@ -171,7 +171,7 @@ module.exports = mongoose.model('Tasks', TaskSchema);
 From the code above, we are defining the set of attributes for our MongoDB collection. Simply this is the payload we need to use to create a task from the service.
 
 As you can see, it the task collection(table) will contain a name: a string, a category: a string and the date it was created. It also contains task status which we have defined as pending — a default value for every task created.
-<br />
+<br /><br />
 
 ## Setting up the routes
 Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (**GET**, **POST**, and so on).
@@ -358,7 +358,7 @@ app.use(function(req, res) {
 });
 ```
 The snippet above helps to redirect and respond whenever a wrong route is entered on the site.
-<br />
+<br /><br />
 
 ## Testing via Postman
 Now that everything is now connected, let’s test each of the routes and the respective methods.
