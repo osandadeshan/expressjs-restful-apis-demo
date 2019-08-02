@@ -314,3 +314,19 @@ Open your terminal and run \
 6. Start Node server \
 Open your terminal and run \
 `npm start`
+<br />
+
+## Adding a middleware
+Having done all these, what happens if we entered a wrong route? say you entered '**http://localhost:3000/task**', It responds with a message "**Cannot GET /task**". Let’s add express middleware which could be used to return more interactive messages.
+
+Middlewares basically intercepts incoming HTTP request and as such you can use them to perform several operations ranging from authentication to validations etc.
+
+To do this, open your **server.js** file and paste the code snippet into it.
+```json
+// Returning response with 404 when incorrect url is requested 
+app.use(function(req, res) {
+  res.status(404).send({ error: { errors: [ { domain: 'global', reason: 'notFound', message: 'Not Found', 
+                        description: 'Couldn\'t find the requested resource \'' + req.originalUrl + '\'' } ], code: 404, message: 'Not Found' } })
+});
+```
+The snippet above helps to redirect and respond whenever a wrong route is entered on the site.
