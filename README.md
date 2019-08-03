@@ -54,10 +54,10 @@ Node.js and MongoDB should be installed. If you haven’t installed them, you ca
 Basically this project contains RESTful APIs for CRUD operations which developed using Mongoose and Express.js. 
 
 Open your terminal and follow the following steps.
-1. Clone this project to your computer
+1. Clone this project to your computer \
 **`git clone https://github.com/osandadeshan/expressjs-restful-apis-demo.git`**
 
-2. Navigate to the project folder
+2. Navigate to the project folder \
 **`cd expressjs-restful-apis-demo`**
 
 3. Install the relevant node modules \
