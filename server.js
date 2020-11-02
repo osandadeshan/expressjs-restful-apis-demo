@@ -1,13 +1,14 @@
 var express = require('express'), // Call express
     app = express(), // Define our app using express
     port = process.env.PORT || 3000, // Set the port
+    dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/tasksdb',
     mongoose = require('mongoose'), // Call mongoose to interact with a MongoDB(Database) instance
     Task = require('./api/models/tasksModel'), // Created model loading here
     bodyParser = require('body-parser'); //Middleware to process incoming request body objects
   
 // Mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/tasksdb'); 
+mongoose.connect(dbUrl); 
 
 /* Configure app to use bodyParser()
    this will let us get the data from a POST */
@@ -22,7 +23,7 @@ routes(app);
 
 // Start the server
 app.listen(port);
-console.log('RESTful API demo server started on: ' + port);
+console.log('RESTful API demo server started on: ' + `http://localhost:${port}/`);
 
 // Get an instance of the express Router
 var router = express.Router();
